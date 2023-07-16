@@ -1,10 +1,24 @@
 'use client';
-import styled from 'styled-components';
+import LandingPage from 'containers/LandingPage';
+import styled, { createGlobalStyle } from 'styled-components';
+import { IBM_Plex_Sans } from 'next/font/google';
 
-const BigText = styled.h1`
-    font-size: 52px;
+const GlobalStyle = createGlobalStyle`
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
 `;
 
 export default function Page() {
-    return <BigText>Boilerplate</BigText>;
+    return (
+        <body>
+            <main>
+                <GlobalStyle />
+                <LandingPage />
+            </main>
+        </body>
+    );
 }
