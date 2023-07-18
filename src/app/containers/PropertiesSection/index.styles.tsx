@@ -10,6 +10,7 @@ export const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     background-color: white;
+    box-shadow: 0px 0px 5px 3px #ffffff7b;
     display: flex;
 `;
 export const Properties = styled.div`
@@ -26,7 +27,7 @@ export const PropertyElement = styled(motion.div)`
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 3px #00000044;
-
+    cursor: pointer;
     flex-direction: column;
     margin: 50px;
     @media screen and (max-width: 767px) {
@@ -47,6 +48,7 @@ export const DotWrapper = styled.div`
     display: flex;
     align-items: center;
     height: 50px;
+    cursor: pointer;
 `;
 
 export const Dot = styled.div`
@@ -75,6 +77,7 @@ export const FullScreen = styled(motion.div)`
 
 export const FullScreenImage = styled.img`
     height: auto;
+    width: auto;
     max-width: 80vw;
 `;
 

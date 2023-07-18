@@ -7,7 +7,7 @@ const font = Eagle_Lake({
 });
 const AboutSection = () => {
     return (
-        <S.Wrapper>
+        <S.Wrapper id="about">
             <S.WelcomeWrapper>
                 <h1 className={font.className}>
                     Szanowni Państwo, nazywam się Katarzyna Wiktoria Szeller.

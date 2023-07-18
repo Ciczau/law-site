@@ -150,7 +150,10 @@ const PropertiesSection = () => {
                                     selected={selectedImage}
                                     key={index}
                                 >
-                                    <S.FullScreenImage src={image} />
+                                    <S.FullScreenImage
+                                        src={image}
+                                        alt="Property photo"
+                                    />
                                 </S.SlideWrapper>
                             );
                         })}
@@ -170,7 +173,7 @@ const PropertiesSection = () => {
                     </S.ImagesSliderWrapper>
                 </S.FullScreen>
             )}
-            <S.Wrapper>
+            <S.Wrapper id="properties">
                 <h1>Nieruchomości</h1>
                 <S.Properties>
                     <FaArrowLeft
@@ -240,6 +243,7 @@ const PropertiesSection = () => {
                                         index === activeSlide ? true : false
                                     }
                                     onClick={() => setActiveSlide(index)}
+                                    key={index}
                                 />
                             );
                         }

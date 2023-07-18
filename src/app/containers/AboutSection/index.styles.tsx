@@ -12,6 +12,7 @@ export const Wrapper = styled.section`
 
 export const WelcomeWrapper = styled.div`
     color: white;
+    width: 100vw;
     margin-top: 50px;
     padding: 16vh 15vw;
     display: flex;
@@ -23,7 +24,7 @@ export const WelcomeWrapper = styled.div`
 
 export const DescriptionWrapper = styled.div`
     width: 100vw;
-    background-color: #051131;
+    background-color: #000000;
     color: white;
     display: flex;
     justify-content: center;

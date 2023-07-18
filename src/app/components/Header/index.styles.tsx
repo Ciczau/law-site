@@ -13,8 +13,8 @@ export const Wrapper = styled.header`
     justify-content: center;
     backdrop-filter: blur(10px);
     align-items: center;
-    background-color: #000b22;
-    box-shadow: 0px 0px 5px 3px #2525259f;
+    background-color: #000000;
+    box-shadow: 0px 0px 5px 3px #25252571;
 `;
 
 export const HeaderContent = styled.div`
@@ -27,4 +27,6 @@ export const HeaderContent = styled.div`
         width: 100%;
     }
 `;
-export const HeaderElement = styled.div``;
+export const HeaderElement = styled.div`
+    cursor: pointer;
+`;
