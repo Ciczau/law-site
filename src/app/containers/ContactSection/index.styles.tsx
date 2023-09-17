@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Wrapper = styled.section`
     width: 100vw;
@@ -115,18 +115,37 @@ export const LawSection = styled.div`
         cursor: pointer;
     }
 `;
+const animation = keyframes`
+    0% {
+        transform: scale(0.95);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.6;
+    }
+`;
 export const AuthorWrapper = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    opacity: 0.5;
+
+    div {
+        opacity: 0.5;
+    }
 `;
 
 export const AuthorLink = styled(Link)`
     margin: 0 5px;
     font-size: 18px;
+    opacity: 1;
     color: gold;
     text-decoration: none;
+    animation: ${animation} 5s linear infinite;
 `;
