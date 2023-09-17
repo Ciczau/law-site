@@ -10,7 +10,8 @@ const AboutSection = () => {
         <S.Wrapper id="about">
             <S.WelcomeWrapper>
                 <h1 className={font.className}>
-                    Szanowni Państwo, nazywam się Katarzyna Wiktoria Szeller.
+                    <div>Szanowni Państwo, nazywam się&nbsp;</div>
+                    <div>Katarzyna Wiktoria Szeller.</div>
                 </h1>
             </S.WelcomeWrapper>
             <S.DescriptionWrapper>

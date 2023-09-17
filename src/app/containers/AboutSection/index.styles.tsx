@@ -24,6 +24,11 @@ export const WelcomeWrapper = styled.div`
         margin-top: 0;
         padding: 16vh 5vw;
     }
+    h1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 `;
 
 export const DescriptionWrapper = styled.div`
