@@ -50,7 +50,6 @@ const LandingPage = () => {
     }, []);
     return (
         <>
-            {!loaded && <Loader />}
             <Head>
                 <title>Scheller Law</title>
                 <meta
@@ -59,18 +58,23 @@ const LandingPage = () => {
                 />
                 <link rel="icon" href="icon.ico" sizes="any" />
             </Head>
-
-            <S.ImageBackground src={bg} alt="background" />
-            {windowWidth > 767 && <Title scrollPos={scrollPos} />}
-            <S.Wrapper>
-                <div className={font.className}>
-                    <Header scrollPos={scrollPos} />
-                    <AboutSection />
-                    <PropertiesSection />
-                    <ExperienceSection />
-                    <ContactSection />
-                </div>
-            </S.Wrapper>
+            {!loaded ? (
+                <Loader />
+            ) : (
+                <>
+                    <S.ImageBackground src={bg} alt="background" />
+                    {windowWidth > 767 && <Title scrollPos={scrollPos} />}
+                    <S.Wrapper>
+                        <div className={font.className}>
+                            <Header scrollPos={scrollPos} />
+                            <AboutSection />
+                            <PropertiesSection />
+                            <ExperienceSection />
+                            <ContactSection />
+                        </div>
+                    </S.Wrapper>
+                </>
+            )}
         </>
     );
 };
