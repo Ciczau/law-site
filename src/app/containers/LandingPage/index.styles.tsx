@@ -10,6 +10,7 @@ export const ImageBackground = styled(Image)`
     width: 100vw;
     height: 100vh;
     position: fixed;
+    object-position: 70%;
     object-fit: cover;
     z-index: -1;
 `;

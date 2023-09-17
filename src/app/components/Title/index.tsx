@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 const Wrapper = styled(motion.div)`
     position: fixed;
-    z-index: 10000;
+    z-index: 6;
     font-size: 30px;
     padding: 15px;
     color: ${(props) => (props.scrollPos === 0 ? '#616161' : 'white')};

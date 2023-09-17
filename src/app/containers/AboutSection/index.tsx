@@ -19,14 +19,14 @@ const AboutSection = () => {
                         Jestem prawnikiem, który zajmuje się regulowaniem stanów
                         prawnych nieruchomości oraz pośredniczeniem w ich
                         sprzedaży. Priorytetowy obszar działania to powiat
-                        <i>zduńskowolski</i>, <i>łaski</i>, <i>sieradzki</i>
-                        oraz &nbsp;<i>Warszawa.</i>,
+                        <i>zduńskowolski</i>, <i>łaski</i>, <i>sieradzki</i>{' '}
+                        oraz<i>Warszawa.</i>
                     </b>
                 </h2>
                 <S.Paragraph>
-                    Oprócz tego poszukuję, w ramach zakupu na własny rachunek.
+                    Oprócz tego poszukuję, w ramach zakupu na własny rachunek
                     nieruchomości zabytkowych i rolnych, a także wynajmuję
-                    własne nieruchomości.,
+                    własne nieruchomości.
                 </S.Paragraph>
                 <S.Paragraph>
                     Według danych Krajowej Rady Adwokackiej w Polsce liczba

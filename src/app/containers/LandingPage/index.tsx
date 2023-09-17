@@ -14,6 +14,8 @@ import PropertiesSection from 'containers/PropertiesSection';
 import ContactSection from 'containers/ContactSection';
 import Title from 'components/Title';
 import Head from 'next/head';
+import { cacheImages } from 'hooks/cacheImages';
+import Loader from 'components/Loader';
 
 const font = Lora({
     weight: '400',
@@ -22,6 +24,7 @@ const font = Lora({
 const LandingPage = () => {
     const [scrollPos, setScrollPos] = useState<number>(0);
     const [windowWidth, setWindowWidth] = useState<number>(0);
+    const [loaded, setLoaded] = useState<boolean>(false);
     useEffect(() => {
         setScrollPos(window.scrollY);
         setWindowWidth(window.innerWidth);
@@ -35,9 +38,19 @@ const LandingPage = () => {
             document.removeEventListener('scroll', handleScroll);
         };
     });
-
+    const loadImages = async () => {
+        const imagesArray: string[] = [];
+        if (bg.blurDataURL) {
+            imagesArray.push(bg.blurDataURL);
+        }
+        await cacheImages(imagesArray, setLoaded);
+    };
+    useEffect(() => {
+        loadImages();
+    }, []);
     return (
         <>
+            {!loaded && <Loader />}
             <Head>
                 <title>Scheller Law</title>
                 <meta
@@ -46,7 +59,7 @@ const LandingPage = () => {
                 />
                 <link rel="icon" href="icon.ico" sizes="any" />
             </Head>
-            <S.GlobalStyle />
+
             <S.ImageBackground src={bg} alt="background" />
             {windowWidth > 767 && <Title scrollPos={scrollPos} />}
             <S.Wrapper>
