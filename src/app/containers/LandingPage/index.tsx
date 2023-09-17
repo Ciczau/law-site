@@ -14,6 +14,7 @@ import PropertiesSection from 'containers/PropertiesSection';
 import ContactSection from 'containers/ContactSection';
 import Title from 'components/Title';
 import Head from 'next/head';
+
 const font = Lora({
     weight: '400',
     subsets: ['latin'],
@@ -37,12 +38,17 @@ const LandingPage = () => {
 
     return (
         <>
+            <Head>
+                <title>Scheller Law</title>
+                <meta
+                    name="description"
+                    content="Katarzyna Szeller, prawo, nieruchomości, Zduńska Wola, Łask, Sieradz."
+                />
+                <link rel="icon" href="icon.ico" sizes="any" />
+            </Head>
+            <S.GlobalStyle />
             <S.ImageBackground src={bg} alt="background" />
             {windowWidth > 767 && <Title scrollPos={scrollPos} />}
-            <Head>
-                <title>Katarzyna Szeller</title>
-                <meta />
-            </Head>
             <S.Wrapper>
                 <div className={font.className}>
                     <Header scrollPos={scrollPos} />

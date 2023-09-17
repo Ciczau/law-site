@@ -49,9 +49,10 @@ export const ContactTextArea = styled.textarea`
     resize: none;
 `;
 
-export const SubmitButton = styled.button`
+export const SubmitButton = styled.input`
     padding: 5px 15px;
     font-family: inherit;
+    margin-top: 10px;
     font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -83,6 +84,10 @@ export const ContactMedia = styled.div`
     margin: 15px;
     font-size: 23px;
     justify-content: space-evenly;
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const FooterLink = styled(Link)`

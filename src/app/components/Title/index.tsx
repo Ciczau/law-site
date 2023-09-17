@@ -14,6 +14,9 @@ const Wrapper = styled(motion.div)`
         props.scrollPos === 0 ? 'none' : '#9c6007'};
     cursor: pointer;
     transition: 0.4s ease;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 `;
 const font = Playfair_Display_SC({
     weight: '400',
@@ -35,7 +38,7 @@ const Title = ({ scrollPos }) => {
             }}
             transition={{ type: 'tween' }}
         >
-            <div className={font.className}>ShellerLaw</div>
+            <div className={font.className}>SchellerLaw</div>
         </Wrapper>
     );
 };

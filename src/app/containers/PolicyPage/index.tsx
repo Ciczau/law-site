@@ -1,6 +1,8 @@
-import { GlobalStyle } from 'page';
-import * as S from './index.styles';
 import Head from 'next/head';
+
+import { GlobalStyle } from 'containers/LandingPage/index.styles';
+
+import * as S from './index.styles';
 
 const PolicyPage = () => {
     return (

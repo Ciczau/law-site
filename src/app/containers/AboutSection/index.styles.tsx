@@ -20,6 +20,10 @@ export const WelcomeWrapper = styled.div`
     align-items: center;
     backdrop-filter: blur(3px);
     text-align: center;
+    @media screen and (max-width: 767px) {
+        margin-top: 0;
+        padding: 16vh 5vw;
+    }
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -34,7 +38,7 @@ export const DescriptionWrapper = styled.div`
     height: auto;
     padding: 35px 15vw;
     @media screen and (max-width: 767px) {
-        padding: 35px 55px;
+        padding: 35px 15px;
     }
 `;
 

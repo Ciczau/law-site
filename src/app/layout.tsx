@@ -1,5 +1,4 @@
 import StyledComponentsRegistry from 'components/StyledComponentsRegistry';
-import { Metadata } from 'next';
 
 export default function RootLayout({ children }) {
     return (
@@ -10,7 +9,3 @@ export default function RootLayout({ children }) {
         </html>
     );
 }
-export const metadata: Metadata = {
-    title: 'Katarzyna Scheller',
-    description: '',
-};

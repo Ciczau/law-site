@@ -1,49 +1,93 @@
-import { useState } from 'react';
-import * as S from './index.styles';
-import { FaEnvelope, FaMailBulk, FaMailchimp, FaPhone } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { useForm } from 'react-hook-form';
+import { instance } from 'utils/instance';
+import { useState } from 'react';
+
+import * as S from './index.styles';
+
 const ContactSection = () => {
-    const [email, setEmail] = useState<string>('');
-    const [text, setText] = useState<string>('');
-    const [phone, setPhone] = useState<string>('');
-    const handleChange = (e, type: string) => {
-        if (type === 'email') {
-            setEmail(e.target.value);
-        } else if (type === 'phone') {
-            setPhone(e.target.value);
-        } else {
-            setText(e.target.value);
-        }
-    };
+    const [success, setSuccess] = useState<boolean>(false);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
     const router = useRouter();
     const handleRedirect = () => {
         router.push('/policy');
     };
+
+    const sendQuestion = async (data) => {
+        try {
+            await instance({
+                url: '/lawsite/question/send',
+                method: 'POST',
+                data: { email: data.email, phone: data.phone, text: data.text },
+            });
+            setSuccess(true);
+        } catch (err) {}
+    };
     return (
         <S.Wrapper id="contact">
-            <div style={{ textAlign: 'center' }}>
-                <S.Title>Skontaktuj się</S.Title>
-                <S.Form>
+            {success ? (
+                <div>Zapytanie wysłane!</div>
+            ) : (
+                <S.Form onSubmit={handleSubmit(sendQuestion)}>
+                    <S.Title>Skontaktuj się</S.Title>
                     <S.ContactInput
-                        name="email"
                         placeholder="Adres email"
-                        onChange={(e) => handleChange(e, 'email')}
+                        {...register('email', {
+                            required: 'Pole wymagane',
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: 'Zły adres email',
+                            },
+                            minLength: {
+                                value: 4,
+                                message: 'Zły adres email',
+                            },
+                            maxLength: {
+                                value: 50,
+                                message: 'Zły adres email',
+                            },
+                        })}
                     />
+                    {errors.email && <div>{(errors.email as any).message}</div>}
                     <S.ContactInput
-                        name="phone"
                         placeholder="Numer telefonu"
-                        onChange={(e) => handleChange(e, 'phone')}
+                        type="number"
+                        {...register('phone', {
+                            required: 'Pole wymagane',
+
+                            minLength: {
+                                value: 9,
+                                message: 'Zły numer telefonu',
+                            },
+                            maxLength: {
+                                value: 9,
+                                message: 'Zły numer telefonu',
+                            },
+                        })}
                     />
+                    {errors.phone && <div>{(errors.phone as any).message}</div>}
                     <S.ContactTextArea
-                        name="text"
                         placeholder="Treść zapytania"
                         rows={4}
-                        onChange={(e) => handleChange(e, 'text')}
+                        {...register('text', {
+                            required: 'Nie można wysłać pustego zapytania',
+                            maxLength: {
+                                value: 255,
+                                message: 'Zapytanie jest za długie',
+                            },
+                        })}
                     />
-                    <S.SubmitButton>Wyślij</S.SubmitButton>
+                    {errors.text && <div>{(errors.text as any).message}</div>}
+
+                    <S.SubmitButton type="submit" value="Wyślij" />
                 </S.Form>
-            </div>
+            )}
             <S.Footer>
                 <S.ContactMedia>
                     <S.FooterLink href="tel:+48791771777">

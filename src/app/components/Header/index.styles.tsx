@@ -9,12 +9,14 @@ export const Wrapper = styled.header`
     position: fixed;
     transition: all 0.3s;
     color: #b1b1b0;
-
     justify-content: center;
     backdrop-filter: blur(10px);
     align-items: center;
     background-color: #000000;
     box-shadow: 0px 0px 5px 3px #25252571;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 `;
 
 export const HeaderContent = styled.div`
