@@ -2,8 +2,10 @@
 import LandingPage from 'containers/LandingPage';
 import styled, { createGlobalStyle } from 'styled-components';
 import { IBM_Plex_Sans } from 'next/font/google';
+import Head from 'next/head';
+import { Metadata } from 'next';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
@@ -17,11 +19,9 @@ const GlobalStyle = createGlobalStyle`
 
 export default function Page() {
     return (
-        <body>
-            <main>
-                <GlobalStyle />
-                <LandingPage />
-            </main>
-        </body>
+        <div>
+            <GlobalStyle />
+            <LandingPage />
+        </div>
     );
 }

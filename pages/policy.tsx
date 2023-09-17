@@ -1,8 +1,9 @@
 'use client';
+import PolicyPage from 'containers/PolicyPage';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-    return <div>Polityka prywatności</div>;
+    return <PolicyPage />;
 };
 
 export default Home;

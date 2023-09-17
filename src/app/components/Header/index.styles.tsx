@@ -8,7 +8,7 @@ export const Wrapper = styled.header`
     height: auto;
     position: fixed;
     transition: all 0.3s;
-    color: #ffd717;
+    color: #b1b1b0;
 
     justify-content: center;
     backdrop-filter: blur(10px);
@@ -29,4 +29,8 @@ export const HeaderContent = styled.div`
 `;
 export const HeaderElement = styled.div`
     cursor: pointer;
+    transition: all 0.15s ease;
+    &:hover {
+        color: white;
+    }
 `;

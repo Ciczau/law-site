@@ -2,6 +2,7 @@ import { useState } from 'react';
 import * as S from './index.styles';
 import { FaEnvelope, FaMailBulk, FaMailchimp, FaPhone } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 const ContactSection = () => {
     const [email, setEmail] = useState<string>('');
     const [text, setText] = useState<string>('');
@@ -45,12 +46,12 @@ const ContactSection = () => {
             </div>
             <S.Footer>
                 <S.ContactMedia>
-                    <div>
-                        <FaPhone /> 791771777
-                    </div>
-                    <div>
-                        <FaEnvelope /> kasia.szeller@outlook.com
-                    </div>
+                    <S.FooterLink href="tel:+48791771777">
+                        <S.PhoneIcon size="100%" /> 791771777
+                    </S.FooterLink>
+                    <S.FooterLink href="mailto:kasia.szeller@outlook.com">
+                        <S.MailIcon size="100%" /> kasia.szeller@outlook.com
+                    </S.FooterLink>
                 </S.ContactMedia>
                 <S.Line />
                 <S.LawSection>

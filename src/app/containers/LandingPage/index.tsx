@@ -1,14 +1,20 @@
 import Header from 'components/Header';
 import * as S from './index.styles';
 import AboutSection from 'containers/AboutSection';
-import bg from '/public/background.jpg';
+import bg from '/public/bg.jpg';
 import { useState, useEffect } from 'react';
 import ExperienceSection from 'containers/ExperienceSection';
-import Head from 'components/Head';
-import { IBM_Plex_Sans, Architects_Daughter, Dekko } from 'next/font/google';
+import {
+    IBM_Plex_Sans,
+    Architects_Daughter,
+    Dekko,
+    Lora,
+} from 'next/font/google';
 import PropertiesSection from 'containers/PropertiesSection';
 import ContactSection from 'containers/ContactSection';
-const font = Dekko({
+import Title from 'components/Title';
+import Head from 'next/head';
+const font = Lora({
     weight: '400',
     subsets: ['latin'],
 });
@@ -32,8 +38,11 @@ const LandingPage = () => {
     return (
         <>
             <S.ImageBackground src={bg} alt="background" />
-            {windowWidth > 767 && <Head scrollPos={scrollPos} />}
-
+            {windowWidth > 767 && <Title scrollPos={scrollPos} />}
+            <Head>
+                <title>Katarzyna Szeller</title>
+                <meta />
+            </Head>
             <S.Wrapper>
                 <div className={font.className}>
                     <Header scrollPos={scrollPos} />

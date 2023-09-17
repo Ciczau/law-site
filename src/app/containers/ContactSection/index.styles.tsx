@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
@@ -9,8 +11,7 @@ export const Wrapper = styled.section`
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 0px 5px 3px #00000094;
-    background: url('/footer.svg'), black;
-    background-position-y: bottom;
+    background-color: black;
 `;
 export const Title = styled.div`
     font-size: 30px;
@@ -63,11 +64,19 @@ export const Footer = styled.footer`
     margin: 10px;
     flex-direction: column;
     align-items: center;
-    color: black;
+    color: #ffffff;
     justify-content: center;
     width: 100vw;
 `;
+export const PhoneIcon = styled(FaPhone)`
+    width: 25px;
 
+    margin-right: 8px;
+`;
+export const MailIcon = styled(FaEnvelope)`
+    width: 25px;
+    margin-right: 8px;
+`;
 export const ContactMedia = styled.div`
     display: flex;
     width: 100vw;
@@ -75,14 +84,29 @@ export const ContactMedia = styled.div`
     font-size: 23px;
     justify-content: space-evenly;
 `;
+
+export const FooterLink = styled(Link)`
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+        color: #3f3f3f;
+    }
+`;
 export const Line = styled.div`
     width: 85vw;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #555454;
 `;
 
 export const LawSection = styled.div`
     display: flex;
+
     justify-content: space-between;
     width: 90vw;
     margin: 15px;
+    div {
+        cursor: pointer;
+    }
 `;

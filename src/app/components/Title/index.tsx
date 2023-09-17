@@ -19,7 +19,7 @@ const font = Playfair_Display_SC({
     weight: '400',
     subsets: ['latin'],
 });
-const Head = ({ scrollPos }) => {
+const Title = ({ scrollPos }) => {
     const handleScroll = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     };
@@ -40,4 +40,4 @@ const Head = ({ scrollPos }) => {
     );
 };
 
-export default Head;
+export default Title;

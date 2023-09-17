@@ -37,10 +37,12 @@ const AboutSection = () => {
                 </S.Paragraph>
                 <S.Paragraph>
                     Dorastałam w domu, gdzie wszędzie leżały akta sądowe, a ja
-                    pomagałam uzasadniać orzeczenia sądowe. Po studiach, przez
-                    wiele lat działalności prawniczej zajmowałam się różnymi
-                    dziedzinami prawa, ale to dopiero prawo rzeczowe, jakim jest
-                    prawo własności, uzmysłowiło mi, że nawet prawo może być
+                    pomagałam uzasadniać orzeczenia sądowe. W domu gdzie gościli
+                    sędziowie Sądu Najwyższego oraz uznani publicyści komentarzy
+                    do aktów normatywnych. Po studiach, przez wiele lat
+                    działalności prawniczej zajmowałam się różnymi dziedzinami
+                    prawa, ale to dopiero prawo rzeczowe, jakim jest prawo
+                    własności, uzmysłowiło mi, że nawet prawo może być
                     intrygujące i logiczne.'
                 </S.Paragraph>
                 <S.Paragraph>

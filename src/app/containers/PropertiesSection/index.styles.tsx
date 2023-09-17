@@ -35,10 +35,11 @@ export const PropertyElement = styled(motion.div)`
     }
 `;
 
-export const PropertyImage = styled(Image)`
+export const PropertyImage = styled.img`
     max-width: 80vw;
-    width: 100%;
-    height: 400px;
+    width: 700px;
+    object-fit: cover;
+    height: 500px;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 3px #00000039;

@@ -18,7 +18,7 @@ export const WelcomeWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
     text-align: center;
 `;
 

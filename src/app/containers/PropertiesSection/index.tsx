@@ -1,55 +1,22 @@
 import { useEffect, useState } from 'react';
 import * as S from './index.styles';
 import { FaArrowLeft, FaArrowRight, FaTimes } from 'react-icons/fa';
-import { AnimatePresence, motion } from 'framer-motion';
 
 const PropertiesSection = () => {
     const [activeSlide, setActiveSlide] = useState<number>(0);
     const [selectedOffer, setSelectedOffer] = useState<number>(-1);
-    const [isFullScreen, setFullScreen] = useState<boolean>(false);
     const [wasChanged, setChanged] = useState<boolean>(false);
     const [touchPosition, setTouchPosition] = useState<number>(-1);
     const [selectedImage, setSelectedImage] = useState<number>(0);
     const properties = [
         {
-            city: 'Warszawa',
-            image: [
-                '/property1.3.jpeg',
-                '/property1.2.jpeg',
-                '/property1.1.jpeg',
-            ],
-            area: '500',
-            price: '500000',
-        },
-        {
-            city: 'Wrocław',
-            image: [
-                '/property1.1.jpeg',
-                '/property1.2.jpeg',
-                '/property1.3.jpeg',
-            ],
-            area: '5000',
-            price: '300000',
-        },
-        {
-            city: 'Zduńska Wola',
-            image: [
-                '/property1.1.jpeg',
-                '/property1.2.jpeg',
-                '/property1.3.jpeg',
-            ],
-            area: '3000',
-            price: '2200000',
-        },
-        {
-            city: 'Rososza',
-            image: [
-                '/property1.1.jpeg',
-                '/property1.2.jpeg',
-                '/property1.3.jpeg',
-            ],
-            area: '430',
-            price: '4500000',
+            city: 'Chociw (gmina Widawa)',
+            image: ['/p3.1.jpeg', '/p3.2.jpeg', '/p3.3.jpeg', '/p3.4.jpeg'],
+            area: '1000',
+            unit: 'm',
+            price: '190000',
+            description:
+                'W imieniu spadkobierczyń sprzedam dom do remontu o powierzchni 100 m kw, posadowiony na działce nr 364, obręb Chociw o powierzchni 1000 m kw. Dom pobudowany z czerwonej, palonej cegły, pokryty eternitem. Podpiwniczony pod połowa domu. Ze strychem użytkowym. Złożony z trzech pokoi, kuchni i łazienki. ',
         },
     ];
     const handleSlideChange = (jump: number) => {
@@ -207,8 +174,9 @@ const PropertiesSection = () => {
                                         <b>Miejscowość:</b> {property.city}
                                     </div>
                                     <div>
-                                        <b>Powierzchnia:</b> {property.area} m
-                                        <sup>2</sup>
+                                        <b>Powierzchnia:</b> {property.area}{' '}
+                                        {property.unit}
+                                        {property.unit === 'm' && <sup>2</sup>}
                                     </div>
                                     <div>
                                         <b>Cena:</b> {property.price} zł
