@@ -1,23 +1,7 @@
 import { Playfair_Display_SC } from 'next/font/google';
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-const Wrapper = styled(motion.div)`
-    position: fixed;
-    z-index: 6;
-    font-size: 30px;
-    padding: 15px;
-    color: ${(props) => (props.scrollPos === 0 ? '#616161' : 'white')};
-    opacity: ${(props) => (props.scrollPos ? '0.6' : '1')};
-    border-radius: ${(props) => (props.scrollPos === 0 ? '0' : '5px 5px 0 0')};
-    background-color: ${(props) =>
-        props.scrollPos === 0 ? 'none' : '#9c6007'};
-    cursor: pointer;
-    transition: 0.4s ease;
-    @media screen and (max-width: 1200px) {
-        display: none;
-    }
-`;
+
+import * as S from './index.styles';
+
 const font = Playfair_Display_SC({
     weight: '400',
     subsets: ['latin'],
@@ -27,7 +11,7 @@ const Title = ({ scrollPos }) => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     };
     return (
-        <Wrapper
+        <S.Wrapper
             scrollPos={scrollPos}
             onClick={handleScroll}
             animate={{
@@ -39,7 +23,7 @@ const Title = ({ scrollPos }) => {
             transition={{ type: 'tween' }}
         >
             <div className={font.className}>SchellerLaw</div>
-        </Wrapper>
+        </S.Wrapper>
     );
 };
 

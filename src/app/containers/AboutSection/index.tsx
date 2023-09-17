@@ -1,5 +1,7 @@
+import { Eagle_Lake } from 'next/font/google';
+
 import * as S from './index.styles';
-import { Dekko, Eagle_Lake, WindSong } from 'next/font/google';
+
 const font = Eagle_Lake({
     weight: '400',
 

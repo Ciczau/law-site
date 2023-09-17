@@ -1,20 +1,12 @@
-import Head from 'next/head';
-
 import { GlobalStyle } from 'containers/LandingPage/index.styles';
+import Head from 'components/Head';
 
 import * as S from './index.styles';
 
 const PolicyPage = () => {
     return (
         <S.Wrapper>
-            <Head>
-                <title>Polityka prywatności</title>
-                <meta
-                    name="description"
-                    content="Polityka prywatności strony"
-                />
-                <link rel="icon" href="icon.ico" sizes="any" />
-            </Head>
+            <Head />
             <GlobalStyle />
             <p>Polityka prywatności</p>
             <p>

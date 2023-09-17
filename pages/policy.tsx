@@ -2,8 +2,8 @@
 import PolicyPage from 'containers/PolicyPage';
 import type { NextPage } from 'next';
 
-const Home: NextPage = () => {
+const Policy: NextPage = () => {
     return <PolicyPage />;
 };
 
-export default Home;
+export default Policy;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { FaArrowLeft, FaArrowRight, FaTimes } from 'react-icons/fa';
 export const Wrapper = styled.section`
     width: 100vw;
     height: auto;
@@ -102,4 +103,31 @@ export const ImagesSliderWrapper = styled.div`
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
+`;
+export const CloseIcon = styled(FaTimes)`
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+`;
+export const LeftArrowIcon = styled(FaArrowLeft)`
+    left: 15px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    color: ${(props) => (props.active ? 'black' : 'gray')};
+    z-index: 10;
+    cursor: pointer;
+`;
+export const RightArrowIcon = styled(FaArrowRight)`
+    right: 15px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    color: ${(props) => (props.active ? 'black' : 'gray')};
+    z-index: 10;
+    cursor: pointer;
 `;

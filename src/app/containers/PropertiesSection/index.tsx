@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { properties } from 'components/properties';
+
 import * as S from './index.styles';
-import { FaArrowLeft, FaArrowRight, FaTimes } from 'react-icons/fa';
 
 const PropertiesSection = () => {
     const [activeSlide, setActiveSlide] = useState<number>(0);
@@ -8,17 +9,6 @@ const PropertiesSection = () => {
     const [wasChanged, setChanged] = useState<boolean>(false);
     const [touchPosition, setTouchPosition] = useState<number>(-1);
     const [selectedImage, setSelectedImage] = useState<number>(0);
-    const properties = [
-        {
-            city: 'Chociw (gmina Widawa)',
-            image: ['/p3.1.jpeg', '/p3.2.jpeg', '/p3.3.jpeg', '/p3.4.jpeg'],
-            area: '1000',
-            unit: 'm',
-            price: '190000',
-            description:
-                'W imieniu spadkobierczyń sprzedam dom do remontu o powierzchni 100 m kw, posadowiony na działce nr 364, obręb Chociw o powierzchni 1000 m kw. Dom pobudowany z czerwonej, palonej cegły, pokryty eternitem. Podpiwniczony pod połowa domu. Ze strychem użytkowym. Złożony z trzech pokoi, kuchni i łazienki. ',
-        },
-    ];
     const handleSlideChange = (jump: number) => {
         setChanged(true);
         let number = activeSlide;
@@ -79,62 +69,100 @@ const PropertiesSection = () => {
             setSelectedImage(number);
         }
     };
+    const renderProperties = () => {
+        return (
+            <>
+                {properties.map((property, index) => {
+                    return (
+                        <S.SlideWrapper key={index} selected={activeSlide}>
+                            <S.PropertyElement
+                                onClick={() => handleSelection(index)}
+                                onTouchStart={handleTouchStart}
+                                onTouchMove={handleTouchMove}
+                                onTouchEnd={() => setTouchPosition(-1)}
+                            >
+                                <S.PropertyImage
+                                    src={property.image[0]}
+                                    width={400}
+                                    height={400}
+                                    alt="Property image"
+                                />
+                                <div>
+                                    <b>Miejscowość:</b> {property.city}
+                                </div>
+                                <div>
+                                    <b>Powierzchnia:</b> {property.area}{' '}
+                                    {property.unit}
+                                    {property.unit === 'm' && <sup>2</sup>}
+                                </div>
+                                <div>
+                                    <b>Cena:</b> {property.price} zł
+                                </div>
+                            </S.PropertyElement>
+                        </S.SlideWrapper>
+                    );
+                })}
+            </>
+        );
+    };
+    const renderPropertyImage = () => {
+        return (
+            <>
+                {properties[selectedOffer].image.map((image, index) => {
+                    return (
+                        <S.SlideWrapper
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={() => setTouchPosition(-1)}
+                            selected={selectedImage}
+                            key={index}
+                        >
+                            <S.FullScreenImage
+                                src={image}
+                                alt="Property photo"
+                            />
+                        </S.SlideWrapper>
+                    );
+                })}
+            </>
+        );
+    };
+    const renderDots = () => {
+        return (
+            <S.DotWrapper>
+                {Array.from({ length: properties.length }).map((_, index) => {
+                    return (
+                        <S.Dot
+                            choosen={index === activeSlide ? true : false}
+                            onClick={() => setActiveSlide(index)}
+                            key={index}
+                        />
+                    );
+                })}
+            </S.DotWrapper>
+        );
+    };
     return (
         <>
             {selectedOffer !== -1 && (
                 <S.FullScreen>
-                    <FaTimes
-                        size="5%"
-                        color="white"
-                        style={{
-                            top: '20px',
-                            left: '20px',
-                            position: 'absolute',
-                            cursor: 'pointer',
-                            zIndex: '9999999',
-                        }}
+                    <S.CloseIcon
+                        size="100%"
                         onClick={() => handleSelection(-1)}
                     />
                     <S.ImagesSliderWrapper>
                         {selectedImage !== 0 && (
-                            <FaArrowLeft
-                                size="5%"
+                            <S.LeftArrowIcon
+                                size="100%"
                                 onClick={() => handleImageChange(-1)}
-                                style={{
-                                    left: '15px',
-                                    position: 'absolute',
-                                    cursor: 'pointer',
-                                    zIndex: '9999999',
-                                }}
                             />
                         )}
-                        {properties[selectedOffer].image.map((image, index) => {
-                            return (
-                                <S.SlideWrapper
-                                    onTouchStart={handleTouchStart}
-                                    onTouchMove={handleTouchMove}
-                                    onTouchEnd={() => setTouchPosition(-1)}
-                                    selected={selectedImage}
-                                    key={index}
-                                >
-                                    <S.FullScreenImage
-                                        src={image}
-                                        alt="Property photo"
-                                    />
-                                </S.SlideWrapper>
-                            );
-                        })}
+                        {renderPropertyImage()}
                         {selectedImage !==
                             properties[selectedOffer].image.length - 1 && (
-                            <FaArrowRight
-                                size="5%"
+                            <S.RightArrowIcon
+                                size="100%"
                                 onClick={() => handleImageChange(1)}
-                                style={{
-                                    right: '15px',
-                                    position: 'absolute',
-                                    zIndex: '9999999',
-                                    cursor: 'pointer',
-                                }}
                             />
                         )}
                     </S.ImagesSliderWrapper>
@@ -143,80 +171,22 @@ const PropertiesSection = () => {
             <S.Wrapper id="properties">
                 <h1>Nieruchomości</h1>
                 <S.Properties>
-                    <FaArrowLeft
-                        size="4%"
-                        style={{
-                            color: activeSlide === 0 ? 'grey' : 'black',
-                            cursor: activeSlide === 0 ? 'default' : 'pointer',
-                            position: 'absolute',
-                            left: '10px',
-                            zIndex: '99999',
-                        }}
+                    <S.LeftArrowIcon
+                        size="100%"
+                        active={activeSlide === 0 ? false : true}
                         onClick={() => handleSlideChange(-1)}
                     />
 
-                    {properties.map((property, index) => {
-                        return (
-                            <S.SlideWrapper key={index} selected={activeSlide}>
-                                <S.PropertyElement
-                                    onClick={() => handleSelection(index)}
-                                    onTouchStart={handleTouchStart}
-                                    onTouchMove={handleTouchMove}
-                                    onTouchEnd={() => setTouchPosition(-1)}
-                                >
-                                    <S.PropertyImage
-                                        src={property.image[0]}
-                                        width={400}
-                                        height={400}
-                                        alt="Property image"
-                                    />
-                                    <div>
-                                        <b>Miejscowość:</b> {property.city}
-                                    </div>
-                                    <div>
-                                        <b>Powierzchnia:</b> {property.area}{' '}
-                                        {property.unit}
-                                        {property.unit === 'm' && <sup>2</sup>}
-                                    </div>
-                                    <div>
-                                        <b>Cena:</b> {property.price} zł
-                                    </div>
-                                </S.PropertyElement>
-                            </S.SlideWrapper>
-                        );
-                    })}
-                    <FaArrowRight
+                    {renderProperties()}
+                    <S.RightArrowIcon
                         onClick={() => handleSlideChange(1)}
-                        size="4%"
-                        style={{
-                            color:
-                                activeSlide === properties.length - 1
-                                    ? 'grey'
-                                    : 'black',
-                            cursor:
-                                activeSlide === properties.length - 1
-                                    ? 'default'
-                                    : 'pointer',
-                            position: 'absolute',
-                            right: '10px',
-                        }}
+                        size="100%"
+                        active={
+                            activeSlide === properties.length - 1 ? false : true
+                        }
                     />
                 </S.Properties>
-                <S.DotWrapper>
-                    {Array.from({ length: properties.length }).map(
-                        (_, index) => {
-                            return (
-                                <S.Dot
-                                    choosen={
-                                        index === activeSlide ? true : false
-                                    }
-                                    onClick={() => setActiveSlide(index)}
-                                    key={index}
-                                />
-                            );
-                        }
-                    )}
-                </S.DotWrapper>
+                {renderDots()}
             </S.Wrapper>
         </>
     );

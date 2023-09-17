@@ -1,21 +1,18 @@
-import Header from 'components/Header';
-import * as S from './index.styles';
-import AboutSection from 'containers/AboutSection';
-import bg from '/public/bg.jpg';
 import { useState, useEffect } from 'react';
+import { Lora } from 'next/font/google';
+
+import Header from 'components/Header';
+import Title from 'components/Title';
+import Loader from 'components/Loader';
+import Head from 'components/Head';
 import ExperienceSection from 'containers/ExperienceSection';
-import {
-    IBM_Plex_Sans,
-    Architects_Daughter,
-    Dekko,
-    Lora,
-} from 'next/font/google';
+import AboutSection from 'containers/AboutSection';
 import PropertiesSection from 'containers/PropertiesSection';
 import ContactSection from 'containers/ContactSection';
-import Title from 'components/Title';
-import Head from 'next/head';
 import { cacheImages } from 'hooks/cacheImages';
-import Loader from 'components/Loader';
+import bg from '/public/bg.jpg';
+
+import * as S from './index.styles';
 
 const font = Lora({
     weight: '400',
@@ -50,14 +47,7 @@ const LandingPage = () => {
     }, []);
     return (
         <>
-            <Head>
-                <title>Scheller Law</title>
-                <meta
-                    name="description"
-                    content="Katarzyna Szeller, prawo, nieruchomości, Zduńska Wola, Łask, Sieradz."
-                />
-                <link rel="icon" href="icon.ico" sizes="any" />
-            </Head>
+            <Head />
             {!loaded ? (
                 <Loader />
             ) : (

@@ -4,7 +4,6 @@ import { instance } from 'utils/instance';
 import { useState } from 'react';
 
 import * as S from './index.styles';
-import Link from 'next/link';
 
 const ContactSection = () => {
     const [success, setSuccess] = useState<boolean>(false);
