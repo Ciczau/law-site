@@ -14,7 +14,7 @@ const Wrapper = styled(motion.div)`
         props.scrollPos === 0 ? 'none' : '#9c6007'};
     cursor: pointer;
     transition: 0.4s ease;
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1200px) {
         display: none;
     }
 `;

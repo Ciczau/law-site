@@ -4,6 +4,7 @@ import { instance } from 'utils/instance';
 import { useState } from 'react';
 
 import * as S from './index.styles';
+import Link from 'next/link';
 
 const ContactSection = () => {
     const [success, setSuccess] = useState<boolean>(false);
@@ -102,6 +103,15 @@ const ContactSection = () => {
                     <div onClick={handleRedirect}>Polityka prywatności</div>
                     <div>Copyright 2023</div>
                 </S.LawSection>
+                <S.AuthorWrapper>
+                    <div>Made by</div>
+                    <S.AuthorLink
+                        href="https://wiktor-michalski.vercel.app"
+                        target="_blank"
+                    >
+                        Ciczau
+                    </S.AuthorLink>
+                </S.AuthorWrapper>
             </S.Footer>
         </S.Wrapper>
     );

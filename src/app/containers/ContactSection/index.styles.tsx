@@ -115,3 +115,18 @@ export const LawSection = styled.div`
         cursor: pointer;
     }
 `;
+export const AuthorWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0.5;
+`;
+
+export const AuthorLink = styled(Link)`
+    margin: 0 5px;
+    font-size: 18px;
+    color: gold;
+    text-decoration: none;
+`;

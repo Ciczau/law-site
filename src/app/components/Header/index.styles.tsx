@@ -25,7 +25,7 @@ export const HeaderContent = styled.div`
     justify-content: space-evenly;
     font-size: 20px;
     transition: all 0.3s ease;
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1024px) {
         width: 100%;
     }
 `;
