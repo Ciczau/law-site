@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
     width: 100vw;
     display: flex;
-
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -11,8 +10,12 @@ export const Wrapper = styled.section`
 `;
 
 export const WelcomeWrapper = styled.div`
-    color: white;
+    color: #000000;
     width: 100vw;
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.527);
+    background-image: url('/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
     margin-top: 50px;
     padding: 16vh 15vw;
     display: flex;

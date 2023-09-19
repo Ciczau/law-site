@@ -21,7 +21,7 @@ const AboutSection = () => {
                     <b>
                         Jestem prawnikiem, który zajmuje się regulowaniem stanów
                         prawnych nieruchomości oraz pośredniczeniem w ich
-                        sprzedaży. Priorytetowy obszar działania to powiat
+                        sprzedaży. Priorytetowy obszar działania to powiat{' '}
                         <i>zduńskowolski</i>, <i>łaski</i>, <i>sieradzki</i>{' '}
                         oraz<i>Warszawa.</i>
                     </b>
