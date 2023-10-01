@@ -10,7 +10,7 @@ export const properties = [
     },
     {
         city: 'Zduńska Wola',
-        image: ['/p2.1.jpeg', '/p2.2.jpeg'],
+        image: ['/p2.1.jpeg', '/p2.2.jpeg', '/p2.3.png'],
         area: '1500',
         unit: 'm',
         price: '250000',

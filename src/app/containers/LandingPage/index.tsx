@@ -39,8 +39,8 @@ const LandingPage = () => {
         const imagesArray: string[] = [];
         if (bg.blurDataURL) {
             imagesArray.push(bg.blurDataURL);
+            await cacheImages(imagesArray, setLoaded);
         }
-        await cacheImages(imagesArray, setLoaded);
     };
     useEffect(() => {
         loadImages();
