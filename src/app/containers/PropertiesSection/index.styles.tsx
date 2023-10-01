@@ -29,16 +29,20 @@ export const PropertyElement = styled(motion.div)`
     border-radius: 5px;
     box-shadow: 0px 0px 5px 3px #00000044;
     cursor: pointer;
+    width: 750px;
+    max-width: 80vw;
     flex-direction: column;
     margin: 50px;
     @media screen and (max-width: 767px) {
         padding: 5px;
     }
+    p {
+        margin-top: 15px;
+    }
 `;
 
 export const PropertyImage = styled.img`
-    max-width: 80vw;
-    width: 700px;
+    width: 100%;
     object-fit: cover;
     height: 500px;
     margin-bottom: 10px;

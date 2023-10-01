@@ -9,11 +9,13 @@ export const Wrapper = styled.header`
     position: fixed;
     transition: all 0.3s;
     color: #b1b1b0;
+    color: ${(props) => (props.scrollPos === 0 ? '#b1b1b0' : '#ffffff')};
     justify-content: center;
     backdrop-filter: blur(10px);
     align-items: center;
-    background-color: #000000;
-    box-shadow: 0px 0px 5px 3px #25252571;
+    background-color: ${(props) =>
+        props.scrollPos === 0 ? '#000000' : '#00000090'};
+    box-shadow: 0px 0px 5px 3px #5f5f5f83;
     @media screen and (max-width: 767px) {
         display: none;
     }

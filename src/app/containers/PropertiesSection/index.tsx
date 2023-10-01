@@ -98,6 +98,7 @@ const PropertiesSection = () => {
                                 <div>
                                     <b>Cena:</b> {property.price} zł
                                 </div>
+                                <p>{property.description}</p>
                             </S.PropertyElement>
                         </S.SlideWrapper>
                     );
