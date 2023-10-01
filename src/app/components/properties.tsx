@@ -15,6 +15,6 @@ export const properties = [
         unit: 'm',
         price: '250000',
         description:
-            'Działka o powierzchni 1573 m kw, położona w Zduńskiej Woli przy ulicy Strzeleckiej 3, tuż przy granicy ze stadionem miejskim, zabudowana dwunastoletnim domkiem drewnianym o powierzchni 45m2 do rozbiórki lub renowacji. Działka na planie trójkąta o bokach: około 61 m, 78 m oraz 52 m.',
+            'Działka o powierzchni 1573 m kw, położona w Zduńskiej Woli przy ulicy Strzeleckiej 3, tuż przy granicy ze stadionem miejskim, zabudowana dwustuletnim domkiem drewnianym o powierzchni 45m2 do rozbiórki lub renowacji. Działka na planie trójkąta o bokach: około 61 m, 78 m oraz 52 m.',
     },
 ];
