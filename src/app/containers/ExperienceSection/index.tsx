@@ -29,11 +29,11 @@ const ExperienceSection = () => {
 
                             <div
                                 style={{
-                                    opacity: isOpened[index] ? 1 : 0,
                                     maxHeight: isOpened[index]
-                                        ? '1000px'
+                                        ? '2000px'
                                         : '0px',
                                     transition: '0.5s ease-in-out',
+                                    overflow: 'hidden',
                                 }}
                             >
                                 {exp.content.map((item) => {

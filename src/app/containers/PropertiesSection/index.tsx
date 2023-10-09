@@ -34,8 +34,8 @@ const PropertiesSection = () => {
     const handleSelection = (index: number) => {
         setChanged(true);
         setSelectedOffer(index);
-        const overflowValue = index === -1 ? 'unset' : 'hidden';
-        document.body.style.overflow = overflowValue;
+        const overflowValue = index === -1 ? 'scroll' : 'hidden';
+        document.body.style.overflowY = overflowValue;
         if (index >= 0) {
             setSelectedImage(0);
         }

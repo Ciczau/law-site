@@ -25,7 +25,7 @@ export const CategoryWrapper = styled.div`
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0, 1, 0, 1);
     max-width: 90vw;
 `;
 export const CategoryTitle = styled.div`
