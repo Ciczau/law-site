@@ -77,6 +77,7 @@ export const FullScreen = styled(motion.div)`
     flex-direction: column;
     z-index: 11;
     position: fixed;
+    padding: 10px;
     overflow-y: scroll;
     backdrop-filter: blur(10px);
     left: 0;
