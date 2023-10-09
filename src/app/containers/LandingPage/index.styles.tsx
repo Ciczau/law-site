@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     color: white;
     height: auto;
     width: 100vw;
+    overflow: hidden;
 `;
 
 export const ImageBackground = styled(Image)`

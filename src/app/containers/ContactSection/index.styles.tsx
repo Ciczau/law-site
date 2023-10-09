@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 export const Wrapper = styled.section`
     width: 100vw;
-    height: 600px;
+
     flex-direction: column;
     display: flex;
     padding: 15px 0;
