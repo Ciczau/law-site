@@ -32,9 +32,10 @@ export const PropertyElement = styled(motion.div)`
     width: 750px;
     max-width: 80vw;
     flex-direction: column;
-    margin: 50px;
-    @media screen and (max-width: 767px) {
+    margin: 10px;
+    @media screen and (max-width: 600px) {
         padding: 5px;
+        max-width: 92vw;
     }
     p {
         margin-top: 15px;
@@ -74,16 +75,15 @@ export const FullScreen = styled(motion.div)`
     height: 100vh;
     top: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100000;
+    flex-direction: column;
+    z-index: 11;
+
     left: 0;
-    background-color: #131313f9;
+    background-color: #141414;
 `;
 
 export const FullScreenImage = styled.img`
-    height: auto;
-    width: auto;
+    max-height: 80vh;
     max-width: 80vw;
 `;
 
@@ -103,6 +103,7 @@ export const SlideWrapper = styled.div`
 export const ImagesSliderWrapper = styled.div`
     width: 100%;
     height: 100vh;
+
     overflow: hidden;
     flex-wrap: nowrap;
     display: flex;
@@ -125,6 +126,9 @@ export const LeftArrowIcon = styled(FaArrowLeft)`
     color: ${(props) => (props.active ? 'black' : 'gray')};
     z-index: 10;
     cursor: pointer;
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
 `;
 export const RightArrowIcon = styled(FaArrowRight)`
     right: 15px;
@@ -134,4 +138,28 @@ export const RightArrowIcon = styled(FaArrowRight)`
     color: ${(props) => (props.active ? 'black' : 'gray')};
     z-index: 10;
     cursor: pointer;
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
+`;
+
+export const MiniaturesWrapper = styled.div`
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    justify-content: center;
+`;
+export const Miniature = styled(Image)`
+    height: 15vh;
+    width: 15vh;
+    cursor: pointer;
+    border-radius: 5px;
+    object-fit: cover;
+    margin: 10px;
+    opacity: ${(props) => (props.selected ? '1' : '0.5')};
 `;

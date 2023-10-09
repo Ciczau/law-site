@@ -143,6 +143,23 @@ const PropertiesSection = () => {
             </S.DotWrapper>
         );
     };
+    const renderMiniatures = () => {
+        return (
+            <>
+                {properties[selectedOffer].image.map((image, index) => {
+                    return (
+                        <S.Miniature
+                            src={image}
+                            width={250}
+                            height={250}
+                            selected={selectedImage === index ? true : false}
+                            onClick={() => setSelectedImage(index)}
+                        />
+                    );
+                })}
+            </>
+        );
+    };
     return (
         <>
             {selectedOffer !== -1 && (
@@ -167,6 +184,9 @@ const PropertiesSection = () => {
                             />
                         )}
                     </S.ImagesSliderWrapper>
+                    <S.MiniaturesWrapper>
+                        {renderMiniatures()}
+                    </S.MiniaturesWrapper>
                 </S.FullScreen>
             )}
             <S.Wrapper id="properties">
