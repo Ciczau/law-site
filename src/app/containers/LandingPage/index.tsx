@@ -4,7 +4,6 @@ import { Lora } from 'next/font/google';
 import Header from 'components/Header';
 import Title from 'components/Title';
 import Loader from 'components/Loader';
-import Head from 'components/Head';
 import ExperienceSection from 'containers/ExperienceSection';
 import AboutSection from 'containers/AboutSection';
 import PropertiesSection from 'containers/PropertiesSection';
@@ -47,7 +46,6 @@ const LandingPage = () => {
     }, []);
     return (
         <div className={font.className}>
-            <Head />
             {!loaded ? (
                 <Loader />
             ) : (

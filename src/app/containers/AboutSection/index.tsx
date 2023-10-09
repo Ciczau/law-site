@@ -12,20 +12,19 @@ const AboutSection = () => {
         <S.Wrapper id="about">
             <S.WelcomeWrapper>
                 <h1 className={font.className}>
-                    <div>Szanowni Państwo, nazywam się&nbsp;</div>
-                    <div>Katarzyna Wiktoria Szeller.</div>
+                    Szanowni Państwo, nazywam się Katarzyna Szeller.
                 </h1>
             </S.WelcomeWrapper>
             <S.DescriptionWrapper>
-                <h2>
-                    <b>
+                <b>
+                    <h2>
                         Jestem prawnikiem, który zajmuje się regulowaniem stanów
                         prawnych nieruchomości oraz pośredniczeniem w ich
                         sprzedaży. Priorytetowy obszar działania to powiat{' '}
                         <i>zduńskowolski</i>, <i>łaski</i>, <i>sieradzki</i>{' '}
                         oraz<i>Warszawa.</i>
-                    </b>
-                </h2>
+                    </h2>
+                </b>
                 <S.Paragraph>
                     Oprócz tego poszukuję, w ramach zakupu na własny rachunek
                     nieruchomości zabytkowych i rolnych, a także wynajmuję

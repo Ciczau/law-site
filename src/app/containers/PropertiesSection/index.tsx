@@ -196,7 +196,7 @@ const PropertiesSection = () => {
                 </S.FullScreen>
             )}
             <S.Wrapper id="properties">
-                <h1>Nieruchomości</h1>
+                <h2>Nieruchomości</h2>
                 <S.Properties>
                     <S.LeftArrowIcon
                         size="100%"
