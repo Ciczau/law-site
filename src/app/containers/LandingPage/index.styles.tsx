@@ -1,9 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Image from 'next/image';
 export const Wrapper = styled.div`
-    width: 100vw;
     color: white;
     height: auto;
+    width: 100vw;
 `;
 
 export const ImageBackground = styled(Image)`
@@ -19,14 +19,14 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        overflow-x: hidden;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
         -webkit-appearance: none;
-        margin: 0;
+       
         }
-        &::-webkit-scrollbar{
-            width: 0;
-        }
+        
     }
 `;

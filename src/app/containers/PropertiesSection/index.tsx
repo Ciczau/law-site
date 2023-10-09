@@ -34,6 +34,8 @@ const PropertiesSection = () => {
     const handleSelection = (index: number) => {
         setChanged(true);
         setSelectedOffer(index);
+        const overflowValue = index === -1 ? 'unset' : 'hidden';
+        document.body.style.overflow = overflowValue;
         if (index >= 0) {
             setSelectedImage(0);
         }
@@ -175,6 +177,7 @@ const PropertiesSection = () => {
                             <S.LeftArrowIcon
                                 size="100%"
                                 onClick={() => handleImageChange(-1)}
+                                modal={true}
                             />
                         )}
                         {renderPropertyImage()}
@@ -183,6 +186,7 @@ const PropertiesSection = () => {
                             <S.RightArrowIcon
                                 size="100%"
                                 onClick={() => handleImageChange(1)}
+                                modal={true}
                             />
                         )}
                     </S.ImagesSliderWrapper>
@@ -197,6 +201,7 @@ const PropertiesSection = () => {
                     <S.LeftArrowIcon
                         size="100%"
                         active={activeSlide === 0 ? false : true}
+                        modal={false}
                         onClick={() => handleSlideChange(-1)}
                     />
 
@@ -207,6 +212,7 @@ const PropertiesSection = () => {
                         active={
                             activeSlide === properties.length - 1 ? false : true
                         }
+                        modal={false}
                     />
                 </S.Properties>
                 {renderDots()}

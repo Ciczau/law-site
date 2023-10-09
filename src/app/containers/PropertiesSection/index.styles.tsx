@@ -70,16 +70,17 @@ export const Dot = styled.div`
 `;
 
 export const FullScreen = styled(motion.div)`
-    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
     display: flex;
     flex-direction: column;
     z-index: 11;
-
+    position: fixed;
+    overflow-y: scroll;
+    backdrop-filter: blur(10px);
     left: 0;
-    background-color: #141414;
+    background-color: #141414df;
 `;
 
 export const FullScreenImage = styled.img`
@@ -124,7 +125,7 @@ export const LeftArrowIcon = styled(FaArrowLeft)`
     width: 30px;
     height: 30px;
     color: ${(props) => (props.active ? 'black' : 'gray')};
-    z-index: 10;
+    z-index: ${(props) => (props.modal ? '10' : '1')};
     cursor: pointer;
     @media screen and (max-width: 600px) {
         display: none;
@@ -150,6 +151,7 @@ export const MiniaturesWrapper = styled.div`
     align-items: center;
     overflow-x: scroll;
     flex-grow: 1;
+
     flex-wrap: nowrap;
     flex-shrink: 0;
     justify-content: center;

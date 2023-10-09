@@ -4,7 +4,7 @@ export const Wrapper = styled.header`
     width: 100vw;
     padding: ${(props) => (props.scrollPos === 0 ? '21px' : '15px')};
     display: flex;
-    z-index: 5;
+    z-index: 2;
     height: auto;
     position: fixed;
     transition: all 0.3s;
