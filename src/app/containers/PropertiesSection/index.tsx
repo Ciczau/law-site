@@ -149,6 +149,8 @@ const PropertiesSection = () => {
                 {properties[selectedOffer].image.map((image, index) => {
                     return (
                         <S.Miniature
+                            key={index}
+                            alt="Property image"
                             src={image}
                             width={250}
                             height={250}
