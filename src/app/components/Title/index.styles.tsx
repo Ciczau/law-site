@@ -7,7 +7,6 @@ export const Wrapper = styled(motion.div)`
     font-size: 50px;
     top: 45vh;
     left: 50vw;
-    transform: translateX(-50%);
     padding: 15px;
     color: #9c8607;
     opacity: ${(props) => (props.scrollPos ? '0.6' : '1')};

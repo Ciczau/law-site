@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
-    
+        
         box-sizing: border-box;
         &::-webkit-scrollbar {
             width: 0;
@@ -30,5 +30,8 @@ export const GlobalStyle = createGlobalStyle`
        
         }
         
+    }
+    body {
+        overflow-y: hidden;
     }
 `;

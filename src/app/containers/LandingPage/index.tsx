@@ -21,6 +21,7 @@ const LandingPage = () => {
     const [scrollPos, setScrollPos] = useState<number>(0);
     const [windowWidth, setWindowWidth] = useState<number>(0);
     const [loaded, setLoaded] = useState<boolean>(false);
+
     useEffect(() => {
         setScrollPos(window.scrollY);
         setWindowWidth(window.innerWidth);
@@ -44,6 +45,11 @@ const LandingPage = () => {
     useEffect(() => {
         loadImages();
     }, []);
+    useEffect(() => {
+        if (loaded) {
+            document.body.style.overflowY = 'scroll';
+        }
+    }, [loaded]);
     return (
         <div className={font.className}>
             <Loader loaded={loaded} />

@@ -13,12 +13,12 @@ const Title = ({ scrollPos, loaded, width }) => {
     return (
         <S.Wrapper
             scrollPos={scrollPos}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0.05, x: '-50%' }}
             onClick={handleScroll}
             animate={{
                 opacity: 1,
                 rotate: scrollPos !== 0 ? 90 : 0,
-                x: !loaded ? '-50%' : scrollPos !== 0 ? '-40%' : '0',
+                x: loaded && (scrollPos !== 0 ? '-40%' : '0'),
                 y: scrollPos !== 0 ? '300%' : ' 0',
                 backgroundColor: scrollPos !== 0 ? '#9c6007' : 'transparent',
                 color: !loaded
@@ -31,7 +31,13 @@ const Title = ({ scrollPos, loaded, width }) => {
                 fontSize: loaded && '31px',
                 display: width < 1200 && loaded && 'none',
             }}
-            transition={{ type: 'tween' }}
+            transition={{
+                type: 'tween',
+                opacity: {
+                    duration: 0.5,
+                    delay: 0.1,
+                },
+            }}
             loaded={loaded}
         >
             <div className={font.className}>SchellerLaw</div>

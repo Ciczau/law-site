@@ -8,7 +8,7 @@ export const Wrapper = styled(motion.div)`
     height: 100vh;
     width: 100vw;
 
-    background-color: black;
+    background-color: #111111;
     justify-content: center;
     align-items: center;
     z-index: 10;
