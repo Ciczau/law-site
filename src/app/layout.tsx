@@ -4,7 +4,7 @@ export const metadata: Metadata = {
     title: 'Scheller Law',
     description:
         'Katarzyna Szeller, prawo, nieruchomości, Zduńska Wola, Łask, Sieradz.',
-    robots: 'index, follow',
+    robots: 'all',
     generator: 'Next.js',
     applicationName: 'Scheller Law',
     keywords: [
@@ -21,13 +21,7 @@ export const metadata: Metadata = {
         'prawo',
     ],
     authors: { name: 'Ciczau', url: 'https://wiktor-michalski.vercel.app' },
-    colorScheme: 'dark',
     creator: 'Katarzyna Szeller',
-    formatDetection: {
-        email: true,
-        address: false,
-        telephone: true,
-    },
 };
 
 export default function RootLayout({ children }) {
