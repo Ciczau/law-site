@@ -46,22 +46,25 @@ const LandingPage = () => {
     }, []);
     return (
         <div className={font.className}>
-            {!loaded ? (
-                <Loader />
-            ) : (
-                <>
-                    <S.ImageBackground src={bg} alt="background" />
+            <Loader loaded={loaded} />
 
-                    <S.Wrapper>
-                        {windowWidth > 767 && <Title scrollPos={scrollPos} />}
-                        <Header scrollPos={scrollPos} />
-                        <AboutSection />
-                        <PropertiesSection />
-                        <ExperienceSection />
-                        <ContactSection />
-                    </S.Wrapper>
-                </>
-            )}
+            <>
+                <S.ImageBackground src={bg} alt="background" />
+
+                <S.Wrapper>
+                    <Title
+                        scrollPos={scrollPos}
+                        loaded={loaded}
+                        width={windowWidth}
+                    />
+
+                    <Header scrollPos={scrollPos} />
+                    <AboutSection />
+                    <PropertiesSection />
+                    <ExperienceSection />
+                    <ContactSection />
+                </S.Wrapper>
+            </>
         </div>
     );
 };
