@@ -36,8 +36,9 @@ export const WelcomeWrapper = styled.div`
 
 export const DescriptionWrapper = styled.div`
     width: 100vw;
-    background-color: #000000;
-    color: white;
+    text-shadow: 0px 5px 3px #0000004e;
+    background-color: #616161;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +48,10 @@ export const DescriptionWrapper = styled.div`
     padding: 35px 15vw;
     @media screen and (max-width: 767px) {
         padding: 35px 15px;
+    }
+    h1 {
+        margin-top: 60px;
+        margin-bottom: 30px;
     }
 `;
 

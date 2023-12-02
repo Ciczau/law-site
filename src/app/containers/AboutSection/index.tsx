@@ -10,13 +10,11 @@ const font = Eagle_Lake({
 const AboutSection = () => {
     return (
         <S.Wrapper id="about">
-            <S.WelcomeWrapper>
-                <h1 className={font.className}>
-                    Szanowni Państwo, nazywam się Katarzyna Szeller.
-                </h1>
-            </S.WelcomeWrapper>
             <S.DescriptionWrapper>
                 <b>
+                    <h1 className={font.className}>
+                        Szanowni Państwo, nazywam się Katarzyna Szeller.
+                    </h1>
                     <h2>
                         Jestem prawnikiem, który zajmuje się regulowaniem stanów
                         prawnych nieruchomości oraz pośredniczeniem w ich
@@ -39,13 +37,13 @@ const AboutSection = () => {
                 </S.Paragraph>
                 <S.Paragraph>
                     Dorastałam w domu, gdzie wszędzie leżały akta sądowe, a ja
-                    pomagałam uzasadniać orzeczenia sądowe. W domu gdzie gościli
-                    sędziowie Sądu Najwyższego oraz uznani publicyści komentarzy
-                    do aktów normatywnych. Po studiach, przez wiele lat
-                    działalności prawniczej zajmowałam się różnymi dziedzinami
-                    prawa, ale to dopiero prawo rzeczowe, jakim jest prawo
-                    własności, uzmysłowiło mi, że nawet prawo może być
-                    intrygujące i logiczne.
+                    pomagałam uzasadniać wyroki. W domu, gdzie gościli sędziowie
+                    Sądu Najwyższego oraz uznani publicyści komentarzy do aktów
+                    normatywnych. Po studiach, przez wiele lat działalności
+                    prawniczej zajmowałam się różnymi dziedzinami prawa, ale to
+                    dopiero prawo rzeczowe, jakim jest prawo własności,
+                    uzmysłowiło mi, że nawet prawo może być intrygujące i
+                    logiczne.
                 </S.Paragraph>
                 <S.Paragraph>
                     Zgodnie z art. 113 ust. 6 ustawy z dnia 21 sierpnia 1997 r.

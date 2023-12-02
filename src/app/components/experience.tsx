@@ -2,6 +2,7 @@ export const experience = [
     {
         title: 'Scheller Law',
         content: [
+            'Grant of Probate Application Services (postępowania spadkowe w Wielkiej Brytanii)',
             'Wynajem własnych nieruchomości/warszawski Muranów.',
             'Kupno nieruchomości na własny rachunek.',
             'Pomoc prawna w obrocie nieruchomościami.',

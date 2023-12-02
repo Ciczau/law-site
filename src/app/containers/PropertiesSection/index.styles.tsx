@@ -39,6 +39,7 @@ export const PropertyElement = styled(motion.div)`
     }
     p {
         margin-top: 15px;
+        white-space: pre-line;
     }
 `;
 
