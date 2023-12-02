@@ -12,8 +12,8 @@ export const Wrapper = styled.section`
 export const WelcomeWrapper = styled.div`
     color: #000000;
     width: 100vw;
-    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.527);
-    background-image: url('/header-bg.jpg');
+    background-image: linear-gradient(#00000039, #00000039),
+        url('/header-bg.jpg');
     background-size: cover;
     background-position: center;
     margin-top: 50px;
@@ -50,7 +50,6 @@ export const DescriptionWrapper = styled.div`
         padding: 35px 15px;
     }
     h1 {
-        margin-top: 60px;
         margin-bottom: 30px;
     }
 `;

@@ -10,6 +10,7 @@ const font = Eagle_Lake({
 const AboutSection = () => {
     return (
         <S.Wrapper id="about">
+            <S.WelcomeWrapper />
             <S.DescriptionWrapper>
                 <b>
                     <h1 className={font.className}>
