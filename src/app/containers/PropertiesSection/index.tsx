@@ -83,6 +83,7 @@ const PropertiesSection = ({ openedProperty }: Props) => {
             openedProperty < properties.length
         ) {
             setActiveSlide(openedProperty);
+            setChanged(true);
         }
     }, [openedProperty]);
 

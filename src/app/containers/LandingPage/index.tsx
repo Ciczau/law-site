@@ -48,6 +48,7 @@ const LandingPage = () => {
         }
     };
     useEffect(() => {
+        window.scrollTo(0, 0);
         loadImages();
     }, []);
     useEffect(() => {
