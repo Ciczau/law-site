@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaArrowRight, FaTimes } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaLink, FaTimes } from 'react-icons/fa';
 export const Wrapper = styled.section`
     width: 100vw;
     height: auto;
@@ -10,6 +10,7 @@ export const Wrapper = styled.section`
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    position: relative;
     background-color: white;
     box-shadow: 0px 0px 5px 3px #ffffff7b;
     display: flex;
@@ -31,6 +32,7 @@ export const PropertyElement = styled(motion.div)`
     cursor: pointer;
     width: 750px;
     max-width: 80vw;
+    position: relative;
     flex-direction: column;
     margin: 10px;
     @media screen and (max-width: 600px) {
@@ -47,11 +49,32 @@ export const PropertyImage = styled.img`
     width: 100%;
     object-fit: cover;
     height: 500px;
+    z-index: 1;
+    position: relative;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 3px #00000039;
 `;
-
+export const LinkCopy = styled(FaLink)`
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border: 0;
+    outline: 0;
+    background-color: #fcf800;
+    z-index: 5;
+    padding: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 3px #00000040;
+    transition: 0.2s ease;
+    &:active {
+        transform: scale(0.9);
+    }
+`;
 export const DotWrapper = styled.div`
     display: flex;
     align-items: center;

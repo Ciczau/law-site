@@ -3,7 +3,11 @@ import { properties } from 'components/properties';
 
 import * as S from './index.styles';
 
-const PropertiesSection = () => {
+type Props = {
+    openedProperty: number | null;
+};
+
+const PropertiesSection = ({ openedProperty }: Props) => {
     const [activeSlide, setActiveSlide] = useState<number>(0);
     const [selectedOffer, setSelectedOffer] = useState<number>(-1);
     const [wasChanged, setChanged] = useState<boolean>(false);
@@ -71,6 +75,23 @@ const PropertiesSection = () => {
             setSelectedImage(number);
         }
     };
+
+    useEffect(() => {
+        if (
+            openedProperty &&
+            openedProperty >= 0 &&
+            openedProperty < properties.length
+        ) {
+            setActiveSlide(openedProperty);
+        }
+    }, [openedProperty]);
+
+    const copyLink = (e, propertyIndex: number) => {
+        e.stopPropagation();
+        navigator.clipboard.writeText(
+            `https://www.schellerlaw.pl?section=properties&property=${propertyIndex}`
+        );
+    };
     const renderProperties = () => {
         return (
             <>
@@ -83,6 +104,10 @@ const PropertiesSection = () => {
                                 onTouchMove={handleTouchMove}
                                 onTouchEnd={() => setTouchPosition(-1)}
                             >
+                                <S.LinkCopy
+                                    size="100%"
+                                    onClick={(e) => copyLink(e, index)}
+                                />
                                 <S.PropertyImage
                                     src={property.image[0]}
                                     width={400}
@@ -197,6 +222,7 @@ const PropertiesSection = () => {
             )}
             <S.Wrapper id="properties">
                 <h2>Nieruchomości</h2>
+
                 <S.Properties>
                     <S.LeftArrowIcon
                         size="100%"

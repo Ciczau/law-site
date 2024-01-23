@@ -12,6 +12,8 @@ import { cacheImages } from 'hooks/cacheImages';
 import bg from '/public/bg.jpg';
 
 import * as S from './index.styles';
+import { useRouter } from 'next/router';
+import CustomHead from 'components/Head/Head';
 
 const font = Lora({
     weight: '400',
@@ -21,6 +23,9 @@ const LandingPage = () => {
     const [scrollPos, setScrollPos] = useState<number>(0);
     const [windowWidth, setWindowWidth] = useState<number>(0);
     const [loaded, setLoaded] = useState<boolean>(false);
+    const [propertyQuery, setPropertyQuery] = useState<number | null>(null);
+
+    const router = useRouter();
 
     useEffect(() => {
         setScrollPos(window.scrollY);
@@ -50,8 +55,27 @@ const LandingPage = () => {
             document.body.style.overflowY = 'scroll';
         }
     }, [loaded]);
+
+    useEffect(() => {
+        const section = router?.query.section;
+        const property = router?.query.property;
+        if (
+            typeof section === 'string' &&
+            typeof property === 'string' &&
+            section === 'properties' &&
+            loaded
+        ) {
+            const properties = document.getElementById('properties');
+            if (properties) {
+                setPropertyQuery(Number(property));
+                properties.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [router, loaded]);
     return (
         <div className={font.className}>
+            <S.GlobalStyle />
+            <CustomHead />
             <Loader loaded={loaded} />
 
             <>
@@ -66,7 +90,7 @@ const LandingPage = () => {
 
                     <Header scrollPos={scrollPos} />
                     <AboutSection />
-                    <PropertiesSection />
+                    <PropertiesSection openedProperty={propertyQuery} />
                     <ExperienceSection />
                     <ContactSection />
                 </S.Wrapper>
