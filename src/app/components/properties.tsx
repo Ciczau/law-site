@@ -16,15 +16,6 @@ export const properties = [
             'Na sprzedaż gospodarstwo rolne położone we wsi Chociw, gminie Widawa, o łącznej powierzchni 3,79 ha, złożone z następujących działek:\n- działka nr 166/2 - powierzchnia 0,78 ha;\n- działka nr 218 - powierzchnia 1,52 ha;\n- działka nr 375 - powierzchnia 0,06 ha;\n- działka nr 471 - powierzchnia 1,02 ha;\n- działka nr 554 - powierzchnia 0,31 ha;\n- działka 555 - powierzchnia 0,1 ha.\nGospodarstwo w trakcie regulacji prawnej, w tym ostatecznie zostanie złożony do właściwego sądu wniosek o założenie księgi wieczystej.\nDziałki nie są objęte gminnym, miejscowym planem zagospodarowania przestrzennego oraz powiatowym planem urządzenia lasu.\nGospodarstwo rolne winna nabyć osoba posiadająca status rolnika, w tym własne gospodarstwo rolne oraz wykształcenie rolnicze lub osoba posiadająca zgodę KOWR.',
     },
     {
-        city: 'Chociw (gmina Widawa)',
-        image: ['/p3.1.jpeg', '/p3.2.jpeg', '/p3.3.jpeg', '/p3.4.jpeg'],
-        area: '1000',
-        unit: 'm',
-        price: '190000',
-        description:
-            'W imieniu spadkobierczyń sprzedam dom do remontu o powierzchni 100 m kw, posadowiony na działce nr 364, obręb Chociw o powierzchni 1000 m kw. Dom pobudowany z czerwonej, palonej cegły, pokryty eternitem. Podpiwniczony pod połowa domu. Ze strychem użytkowym. Złożony z trzech pokoi, kuchni i łazienki. ',
-    },
-    {
         city: 'Zduńska Wola',
         image: ['/p2.1.jpeg', '/p2.2.jpeg', '/p2.3.png'],
         area: '1500',
