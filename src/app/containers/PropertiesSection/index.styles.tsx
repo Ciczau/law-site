@@ -82,7 +82,7 @@ export const DotWrapper = styled.div`
     cursor: pointer;
 `;
 
-export const Dot = styled.div`
+export const Dot = styled.div<{ choosen: boolean }>`
     width: ${(props) => (props.choosen === true ? '22px' : '17px')};
     margin: 3px;
     height: ${(props) => (props.choosen === true ? '22px' : '17px')};
@@ -113,7 +113,7 @@ export const FullScreenImage = styled.img`
     max-width: 80vw;
 `;
 
-export const SlideWrapper = styled.div`
+export const SlideWrapper = styled.div<{ selected: number }>`
     width: 100vw;
     height: auto;
     display: flex;
@@ -144,7 +144,10 @@ export const CloseIcon = styled(FaTimes)`
     width: 30px;
     height: 30px;
 `;
-export const LeftArrowIcon = styled(FaArrowLeft)`
+export const LeftArrowIcon = styled(FaArrowLeft)<{
+    active?: boolean;
+    modal: boolean;
+}>`
     left: 15px;
     position: absolute;
     width: 30px;
@@ -156,7 +159,10 @@ export const LeftArrowIcon = styled(FaArrowLeft)`
         display: none;
     }
 `;
-export const RightArrowIcon = styled(FaArrowRight)`
+export const RightArrowIcon = styled(FaArrowRight)<{
+    active?: boolean;
+    modal: boolean;
+}>`
     right: 15px;
     position: absolute;
     width: 30px;
@@ -181,7 +187,7 @@ export const MiniaturesWrapper = styled.div`
     flex-shrink: 0;
     justify-content: center;
 `;
-export const Miniature = styled(Image)`
+export const Miniature = styled(Image)<{ selected: boolean }>`
     height: 15vh;
     width: 15vh;
     cursor: pointer;
