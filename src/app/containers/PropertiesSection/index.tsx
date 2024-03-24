@@ -84,13 +84,14 @@ const PropertiesSection = ({ openedProperty }: Props) => {
         ) {
             setActiveSlide(openedProperty);
             setChanged(true);
+            console.log(openedProperty);
         }
     }, [openedProperty]);
 
     const copyLink = (e, propertyIndex: number) => {
         e.stopPropagation();
         navigator.clipboard.writeText(
-            `https://www.schellerlaw.pl?section=properties&property=${propertyIndex}`
+            `https://www.schellerlaw.pl/nieruchomosci?property=${propertyIndex}`
         );
     };
     const renderProperties = () => {

@@ -54,6 +54,13 @@ const AboutSection = () => {
                     dokumentów albo innych dokumentów nie można ustalić osób,
                     którym przysługują do niej prawa rzeczowe.
                 </S.Paragraph>
+                <S.Paragraph>
+                    Ponadto pomagam w oddłużaniu osób zadłużonych, wobec których
+                    wydano nakazy zapłaty, gdzie toczą się już postępowania
+                    egzekucyjne, chronię dłużników przed licytacją majątku
+                    nieruchomego a także działam w obsłudze prawnej dla branży
+                    IT.
+                </S.Paragraph>
             </S.DescriptionWrapper>
         </S.Wrapper>
     );

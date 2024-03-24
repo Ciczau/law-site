@@ -2,20 +2,18 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled(motion.div)`
-    position: fixed;
     z-index: 31;
-    font-size: 50px;
-    top: 45vh;
-    left: 50vw;
-    padding: 15px;
-    color: #9c8607;
-    opacity: ${(props) => (props.scrollPos ? '0.6' : '1')};
-    border-radius: ${(props) => (props.scrollPos === 0 ? '0' : '5px 5px 0 0')};
-    background-color: ${(props) =>
-        props.scrollPos === 0 ? 'none' : '#9c6007'};
+    font-size: 30px;
+
+    color: #979797;
+
     cursor: pointer;
     transition: 0.4s ease;
-    @media screen and (max-width: 767px) {
-        font-size: 37px;
+    @media (min-width: 768px) {
+        display: none;
+        font-size: 35px;
+    }
+    @media (min-width: 1240px) {
+        display: block;
     }
 `;

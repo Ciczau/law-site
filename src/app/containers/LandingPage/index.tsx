@@ -74,29 +74,18 @@ const LandingPage = () => {
         }
     }, [router, loaded]);
     return (
-        <div className={font.className}>
-            <S.GlobalStyle />
-            <CustomHead />
+        <>
             <Loader loaded={loaded} />
-
             <>
                 <S.ImageBackground src={bg} alt="background" />
 
                 <S.Wrapper>
-                    <Title
-                        scrollPos={scrollPos}
-                        loaded={loaded}
-                        width={windowWidth}
-                    />
-
-                    <Header scrollPos={scrollPos} />
                     <AboutSection />
-                    <PropertiesSection openedProperty={propertyQuery} />
                     <ExperienceSection />
                     <ContactSection />
                 </S.Wrapper>
             </>
-        </div>
+        </>
     );
 };
 

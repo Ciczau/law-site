@@ -1,9 +1,10 @@
-import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { instance } from 'utils/instance';
 import { useState } from 'react';
 
 import * as S from './index.styles';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const ContactSection = () => {
     const [success, setSuccess] = useState<boolean>(false);
@@ -21,18 +22,21 @@ const ContactSection = () => {
 
     const sendQuestion = async (data) => {
         try {
-            await instance({
-                url: '/lawsite/question/send',
-                method: 'POST',
-                data: { email: data.email, phone: data.phone, text: data.text },
+            await axios.post('api/question', {
+                email: data.email,
+                phone: data.phone,
+                text: data.text,
             });
             setSuccess(true);
+            setTimeout(() => {
+                router.reload();
+            }, 3000);
         } catch (err) {}
     };
     return (
         <S.Wrapper id="contact">
             {success ? (
-                <div>Zapytanie wysłane!</div>
+                <S.Information>Zapytanie wysłane!</S.Information>
             ) : (
                 <S.Form onSubmit={handleSubmit(sendQuestion)}>
                     <S.Title>Skontaktuj się</S.Title>

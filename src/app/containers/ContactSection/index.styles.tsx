@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
     flex-direction: column;
     display: flex;
     padding: 15px 0;
+    color: white;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 0px 5px 3px #00000094;
@@ -148,4 +149,7 @@ export const AuthorLink = styled(Link)`
     color: gold;
     text-decoration: none;
     animation: ${animation} 5s linear infinite;
+`;
+export const Information = styled.div`
+    height: 300px;
 `;

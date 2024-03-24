@@ -54,6 +54,6 @@ export const DescriptionWrapper = styled.div`
     }
 `;
 
-export const Paragraph = styled.p`
+export const Paragraph = styled.h4`
     margin: 15px 0;
 `;

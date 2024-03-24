@@ -3,7 +3,7 @@ import Image from 'next/image';
 export const Wrapper = styled.div`
     color: white;
     height: auto;
-    width: 100vw;
+
     overflow: hidden;
 `;
 
@@ -19,10 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
-        
+        scroll-behavior: smooth;
         box-sizing: border-box;
         &::-webkit-scrollbar {
-            width: 0;
+            width: 2;
         }
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
@@ -31,7 +31,5 @@ export const GlobalStyle = createGlobalStyle`
         }
         
     }
-    body {
-        overflow-y: hidden;
-    }
+
 `;
