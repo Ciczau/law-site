@@ -9,7 +9,7 @@ export const Content = styled.div`
     padding: 100px 15vw;
     text-align: center;
     display: flex;
-    color: #ffffff;
+    color: #e6d013;
     background-color: #616161;
     flex-direction: column;
     align-items: center;
