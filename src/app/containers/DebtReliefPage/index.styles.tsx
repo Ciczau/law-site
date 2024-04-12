@@ -6,11 +6,16 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-    margin: 100px 0;
+    padding: 100px 15vw;
     text-align: center;
-    padding: 0 15vw;
+    display: flex;
+    color: #ffffff;
+    background-color: #616161;
+    flex-direction: column;
+    align-items: center;
+
     @media screen and (max-width: 767px) {
-        margin-top: 50px;
+        padding: 100px 15px;
     }
     h3 {
         margin: 20px 0;

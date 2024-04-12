@@ -5,7 +5,9 @@ export const Wrapper = styled(motion.div)`
     z-index: 31;
     font-size: 30px;
 
-    color: #979797;
+    div {
+        color: rgba(180, 154, 6);
+    }
 
     cursor: pointer;
     transition: 0.4s ease;
