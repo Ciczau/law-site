@@ -71,7 +71,7 @@ const PropertiesSection = ({ openedProperty }: Props) => {
     const handleImageChange = (jump: number) => {
         let number = selectedImage;
         number += jump;
-        if (number >= 0 && number < properties[selectedOffer].image.length) {
+        if (number >= 0 && number < properties[selectedOffer]?.image.length) {
             setSelectedImage(number);
         }
     };
