@@ -71,7 +71,7 @@ const PropertiesSection = ({ openedProperty }: Props) => {
     const handleImageChange = (jump: number) => {
         let number = selectedImage;
         number += jump;
-        if (properties.length && number >= 0 && number < properties[selectedOffer]?.image.length) {
+        if (properties.length && properties[selectedOffer] && number >= 0 && number < properties[selectedOffer]?.image.length) {
             setSelectedImage(number);
         }
     };
@@ -138,7 +138,7 @@ const PropertiesSection = ({ openedProperty }: Props) => {
     const renderPropertyImage = () => {
         return (
             <>
-                {properties.length && properties[selectedOffer].image.map((image, index) => {
+                {properties.length && properties[selectedOffer] && properties[selectedOffer].image.map((image, index) => {
                     return (
                         <S.SlideWrapper
                             onTouchStart={handleTouchStart}
@@ -175,7 +175,7 @@ const PropertiesSection = ({ openedProperty }: Props) => {
     const renderMiniatures = () => {
         return (
             <>
-                {properties.length && properties[selectedOffer]?.image.map((image, index) => {
+                {properties.length && properties[selectedOffer] && properties[selectedOffer]?.image.map((image, index) => {
                     return (
                         <S.Miniature
                             key={index}
@@ -208,7 +208,7 @@ const PropertiesSection = ({ openedProperty }: Props) => {
                             />
                         )}
                         {renderPropertyImage()}
-                        {properties.length && selectedImage !==
+                        {properties.length && properties[selectedOffer] && selectedImage !==
                             properties[selectedOffer]?.image.length - 1 && (
                             <S.RightArrowIcon
                                 size="100%"
