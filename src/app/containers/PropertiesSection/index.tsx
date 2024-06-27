@@ -175,7 +175,7 @@ const PropertiesSection = ({ openedProperty }: Props) => {
     const renderMiniatures = () => {
         return (
             <>
-                {properties[selectedOffer].image.map((image, index) => {
+                {properties[selectedOffer]?.image.map((image, index) => {
                     return (
                         <S.Miniature
                             key={index}
@@ -209,7 +209,7 @@ const PropertiesSection = ({ openedProperty }: Props) => {
                         )}
                         {renderPropertyImage()}
                         {selectedImage !==
-                            properties[selectedOffer].image.length - 1 && (
+                            properties[selectedOffer]?.image.length - 1 && (
                             <S.RightArrowIcon
                                 size="100%"
                                 onClick={() => handleImageChange(1)}
