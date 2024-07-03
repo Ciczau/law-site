@@ -6,7 +6,6 @@ import Title from 'components/Title';
 import Loader from 'components/Loader';
 import ExperienceSection from 'containers/ExperienceSection';
 import AboutSection from 'containers/AboutSection';
-import PropertiesSection from 'containers/PropertiesSection';
 import ContactSection from 'containers/ContactSection';
 import { cacheImages } from 'hooks/cacheImages';
 import bg from '/public/bg.jpg';
