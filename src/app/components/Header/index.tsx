@@ -13,10 +13,6 @@ const headerElements = [
         page: '/#experience',
     },
     {
-        name: 'Nieruchomości',
-        page: '/nieruchomosci',
-    },
-    {
         name: 'Oddłużanie osób fizycznych',
         page: '/oddluzanie-osob-fizycznych',
     },
