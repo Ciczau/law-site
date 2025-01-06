@@ -1,1 +1,1 @@
-export { default } from '../src/app/containers/LandingPage';
+export { default } from '../src/app/containers/LandingPage'
